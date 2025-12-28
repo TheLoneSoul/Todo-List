@@ -8,3 +8,7 @@ h2 {
 #todo_list li {
   @apply bg-amber-300 break-all mt-4 p-4 gap-10 flex justify-between;
 }
+
+.completed {
+  @apply line-through decoration-red-500;
+}

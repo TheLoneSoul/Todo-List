@@ -33,18 +33,37 @@ document.addEventListener("DOMContentLoaded", () => {
     getData(data);
     todo_input.value = "";
     saveData();
-    console.log(todos);
   });
 
   function getData(task) {
-    console.log(task.text);
-
     const li = document.createElement("li");
-    li.textContent = task.text;
-    li.innerHTML = `<span>${li.textContent}</span>
+    li.setAttribute("data-id", task.id);
+    if (task.complete === true) li.classList.add("completed");
+    li.innerHTML = `<span>${task.text}</span>
     <input type="checkbox" id="todo_checkbox">
     `;
+
+    li.addEventListener("click", (e) => {
+      if (e.target.tagName === "INPUT") return;
+      task.complete = !task.complete;
+      li.classList.toggle("completed");
+      saveData();
+    });
+
     todo_list_UL.appendChild(li);
+
+    li.querySelector("#todo_checkbox").addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (e.target.checked) {
+        todos = todos.filter((todo) => todo.id !== Number(li.dataset.id));
+        saveData();
+        li.remove();
+
+        if (todo_list_UL.children.length === 0) {
+          localStorage.removeItem("todos_task");
+        }
+      }
+    });
   }
 
   function saveData() {
