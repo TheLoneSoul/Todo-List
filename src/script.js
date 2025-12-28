@@ -12,3 +12,18 @@ const current_date = today.getDate();
 const month = today.toLocaleString("default", { month: "short" });
 const year = today.getFullYear();
 date.textContent = `${month} ${current_date}, ${year}`;
+
+let todos = [];
+
+add_button.addEventListener("click", () => {
+  const text = todo_input.value.trim();
+  const data = {
+    id: Date.now(), // It will provide unique id
+    text: text,
+    complete: false,
+  };
+
+  todos.push(data);
+  todo_input.value = "";
+  console.log(todos);
+});
