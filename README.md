@@ -8,7 +8,7 @@ This app allows users to manage tasks efficiently with CRUD operations, all stor
 ## Features
 
 - **Create, Read, Update, Delete (CRUD)** tasks.
-- Click a task to mark it as **completed** with a line-through style.
+- Click a task to mark it as **completed** with a line-through style and a simple bouncing animation.
 - Use the checkbox to **delete tasks**.
 - Display **current day and date** automatically.
 - Persistent storage using localStorage.
@@ -31,7 +31,7 @@ All source code files are located inside the `docs` folder.
 ## How It Works
 
 - Tasks are displayed as list items with checkboxes.
-- Clicking a task toggles **completed** state and applies a line-through.
+- Clicking a task toggles **completed** state and applies a line-through with bouncing animation which will toggle when pressed again.
 - Clicking the checkbox deletes the task and updates localStorage.
 - All tasks persist across page reloads.
 

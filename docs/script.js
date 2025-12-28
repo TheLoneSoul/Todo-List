@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function getData(task) {
     const li = document.createElement("li");
     li.setAttribute("data-id", task.id);
-    if (task.complete === true) li.classList.add("completed");
+    if (task.complete === true) li.classList.add("completed", "animate-bounce");
     li.innerHTML = `<span>${task.text}</span>
     <input type="checkbox" id="todo_checkbox">
     `;
@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.target.tagName === "INPUT") return;
       task.complete = !task.complete;
       li.classList.toggle("completed");
+      li.classList.toggle("animate-bounce");
       saveData();
     });
 
