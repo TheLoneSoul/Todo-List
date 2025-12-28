@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+h1,
+h2 {
+  @apply text-rose-500;
+}
+
+#todo-list li {
+  @apply bg-amber-300 break-all mt-4 p-4 gap-10 flex justify-between;
+}

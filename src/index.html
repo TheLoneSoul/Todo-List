@@ -8,6 +8,43 @@
     <link rel="stylesheet" href="../src/output.css" />
   </head>
   <body>
-    <p>This is Todo List</p>
+    <div
+      class="root min-h-screen flex justify-center bg-linear-to-r from-[#3498DB] to-[#2980B9] items-center font-mono"
+    >
+      <div
+        class="w-120 todo-content rounded-sm items-center bg-amber-200 shadow-2xl p-5"
+      >
+        <h1
+          id="weekday"
+          class="text-center font-bold text-4xl tracking-wider mt-2"
+        >
+          Day
+        </h1>
+        <h2 id="date" class="text-center mt-1 text-xl opacity-70">
+          Month day,year
+        </h2>
+
+        <div
+          class="input mt-5 flex border-0 rounded-lg justify-between bg-linear-to-r from-[#3498DB] to-[#2980B9]"
+        >
+          <button
+            id="add_btn"
+            class="px-3 text-white hover:bg-amber-500 hover:rounded-l-lg text-l w-fit"
+          >
+            +
+          </button>
+          <input
+            id="todo_input"
+            type="text"
+            placeholder="Add Task"
+            class="pl-5 w-full focus:outline-none bg-amber-50 py-1.75"
+          />
+        </div>
+
+        <div class="list mt-10">
+          <ul id="todo_list" class=""></ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
